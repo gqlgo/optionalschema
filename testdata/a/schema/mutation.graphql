@@ -1,0 +1,28 @@
+type Mutation {
+    mutation(input: MutationInput!): MutationPayload!
+    mutation2(optionalMutationInput: OptionalMutationInput): OptionalMutationPayload! # want "optionalMutationInput is optional"
+    optionalMutation(mutationInput: MutationInput!): OptionalMutationPayload # want "optionalMutation is optional"
+    optionalMutation2(optionalMutationInput: OptionalMutationInput): OptionalMutationPayload # want "optionalMutation2 is optional" "optionalMutationInput is optional"
+}
+
+input MutationInput {
+    name: String!
+}
+
+type MutationPayload {
+    field: String!
+    optionalField: String # want "optionalField is optional"
+    typeField: Type!
+    optionalTypeField: OptionalType!
+}
+
+input OptionalMutationInput {
+    name: String!
+}
+
+type OptionalMutationPayload {
+    field: String!
+    optionalField: String # want "optionalField is optional"
+    typeField: Type!
+    optionalTypeField: OptionalType!
+}

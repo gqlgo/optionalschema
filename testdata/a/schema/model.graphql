@@ -1,0 +1,24 @@
+type Type {
+	field: String!
+	optionalField: String # want "optionalField is optional"
+}
+
+type OptionalType {
+	field: String!
+	optionalField: String # want "optionalField is optional"
+}
+
+type ExcludeOptionalType {
+	field: String!
+	optionalField: String # want "optionalField is optional"
+}
+
+input Input {
+	field: String!
+	optionalField: String # want "optionalField is optional"
+}
+
+input OptionalInput {
+	field: String!
+	optionalField: String # want "optionalField is optional"
+}

@@ -1,0 +1,13 @@
+type Query {
+	field: String!
+	optionalField: String # want "optionalField is optional"
+
+	typeField: Type!
+	optionalTypeField: OptionalType # want "optionalTypeField is optional"
+	excludeOptionalTypeField: ExcludeOptionalType
+
+	inputField(input: Input!): String!
+	inputField2(optionalInput: OptionalInput): String! # want "optionalInput is optional"
+	optionalInputField(input: Input!): String # want "optionalInputField is optional"
+	optionalInputField2(optionalInput: OptionalInput): String # want "optionalInputField2 is optional" "optionalInput is optional"
+}

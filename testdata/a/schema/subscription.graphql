@@ -1,0 +1,8 @@
+type Subscription {
+    field: String!
+    optionalField: String # want "optionalField is optional"
+
+    typeField: Type!
+    optionalTypeField: OptionalType # want "optionalTypeField is optional"
+    excludeOptionalTypeField: ExcludeOptionalType
+}
